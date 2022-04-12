@@ -6,8 +6,8 @@ correspondant à un compte en précisant sa référence.
 ● Consulter l’historique des transactions : il doit être possible de voir le contenu de
 l’historique des transactions.
 """
-def Afficher_liste_comptes():
-  f = open("comptes.txt", "rt")
+def Afficher_liste_comptes(file="histo.txt"):
+  f = open(file, "rt")
   tab=[]
   for line in f:
       tab.append(line.split('\t'))
@@ -15,26 +15,62 @@ def Afficher_liste_comptes():
   return tab
 
 def Consulter_liste_comptes(ref):
-  f = open("comptes.txt", "rt")
-  tab=[]
-  for line in f:
-      tab.append(line.split('\t'))
-  f.close()
+  tab=Afficher_liste_comptes()
   compte=""
   for element in tab:
       if(element[0]==ref):
           compte=element
           break;
+  entete='\t'.join(tab[0])
   if(compte==""):
-      return("","Compte non existant")
+      return(entete,"Compte non existant")
   else:
-      entete='    '.join(tab[0])
-      compte='    '.join(compte)
+      compte='\t'.join(compte)
+      print(entete)
+      print(compte)
       return (entete,compte)
     
-def Consulter_facture_compte(ref):
-    f = open("factures.txt", "rt")
+def Afficher_facture_compte(file="histo.txt"):
+    f = open(file, "rt")
     tab=[]
     for line in f:
         tab.append(line.split('\t'))
     f.close()
+    return tab
+
+def Consulter_facture_compte():
+  tab=Afficher_facture_compte()
+  facture=""
+  for element in tab:
+      if(element[0]==ref):
+          facture=element
+          break;
+  entete='\t'.join(tab[0])
+  if(facture==""):
+    return(entete,"Compte non existant")
+  else:
+    compte='\t'.join(compte)
+    print(entete)
+    print(facture)
+    return (entete,facture)
+
+def Afficher_historique_transactions(file="histo.txt"):
+  f = open(file, "rt")
+  tab=[]
+  for line in f:
+      tab.append(line.split('\t'))
+  f.close()
+  print(tab)
+  return tab
+
+def Consulter_historique_transactions(ref):
+  tab=Afficher_historique_transactions()
+  entete=tab[0]
+  histo=[]
+  for element in tab:
+      if(element[0]==ref):
+          histo.append(element)
+  print(histo)
+  return (entete,histo)
+
+Consulter_historique_transactions("1000")

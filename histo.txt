@@ -1,4 +1,4 @@
-Référence Compte	Transaction	Valeur	Résultat	Etat
+Reference Compte	Transaction	Valeur	Resultat	Etat
 1000	retrait	200	echec	negatif
 2000	retrait	300	succes	positif
 1000	retrait	100	succes	negatif
