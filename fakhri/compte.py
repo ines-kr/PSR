@@ -20,13 +20,24 @@ class Compte :
 def read_comptes(ref): #consulter la liste des comptes 
         f=open("comptes.txt","r")
         l=f.readlines()
+        exist=False
         for line in l:
             L=list(line.split("."))
             if (ref==int(L[0])):
-                print(line)
-                break
-            else :
-                print("Not found")
+                exist=True
+                return(line)
+        if (exist==False) : return("Not found")
+
+def exist_compte(ref):
+        f=open("comptes.txt","r")
+        l=f.readlines()
+        exist=False
+        for line in l:
+            L=list(line.split("."))
+            if (ref==int(L[0])):
+                exist=True
+        return(exist)
+
 
 def consulter_facture(ref): #consulter la facture d'un compte 
         f=open("facture.txt","r")
