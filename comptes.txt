@@ -1,5 +1,8 @@
-Reference Compte	Valeur	Etat	Plafond Debit
-1000	500 	Negatif	600
-2000	300	Positif	0
-3000	950	Positif	1000
-4000 	800 	Negatif	800
+1000.500.Negatif.600
+2000.500.Negatif.700
+2000.-300.Negatif.700
+2000.200.Positif.700
+2000.200.Positif.700
+2000.200.Positif.700
+2000.200.Positif.700
+2000.200.Positif.700
