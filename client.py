@@ -1,6 +1,6 @@
 import socket
 
-SERVER_ADDRESS = ''
+SERVER_ADDRESS = '192.168.1.8'
 SERVER_PORT = 22222
 s = socket.socket()
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
