@@ -38,7 +38,7 @@ def Afficher_facture_compte(file="histo.txt"):
     f.close()
     return tab
 
-def Consulter_facture_compte():
+def Consulter_facture_compte(ref):
   tab=Afficher_facture_compte()
   facture=""
   for element in tab:
