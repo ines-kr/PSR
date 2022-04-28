@@ -27,3 +27,7 @@ Reference Compte*Transaction*Valeur*Resultat*Etat
 1000*retrait*179500*echec*Negatif
 1000*retrait*179500*echec*Negatif
 1000*retrait*179500*echec*Negatif
+1000*depot*10000*succes*Positif
+1000*depot*10000*succes*Positif
+1000*depot*1000*succes*Positif
+1000*depot*800*succes*Positif

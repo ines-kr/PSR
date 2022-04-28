@@ -17,11 +17,11 @@ def Consulter_liste_compte(ref):
       if(element[0]==ref):
           compte=element
           break
-  entete='\t'.join(tab[0])
+  entete='*'.join(tab[0])
   if(compte==""):
       return(entete+"Compte non existant")
   else:
-      compte='\t'.join(compte)
+      compte='*'.join(compte)
       return (entete+compte)
     
 def Afficher_facture_compte(file="facture.txt"):
@@ -39,12 +39,12 @@ def Consulter_facture_compte(ref):
       if(element[0]==ref):
           facture=element
           break
-  entete='\t'.join(tab[0])
+  entete='*'.join(tab[0])
   if(facture==""):
-    return(entete,"Compte non existant")
+    return(entete+"#Compte non existant")
   else:
-    facture='\t'.join(facture)
-    return (entete+facture)
+    facture='*'.join(facture)
+    return (entete+"#"+facture)
 
 def Afficher_historique_transactions(file="histo.txt"):
   f = open(file, "rt")
@@ -56,13 +56,13 @@ def Afficher_historique_transactions(file="histo.txt"):
 
 def Consulter_historique_transactions(ref):
     tab=Afficher_historique_transactions()
-    entete='\t'.join(tab[0])
+    entete='*'.join(tab[0])
     histo=[]
     for element in tab:
         if(element[0]==ref):
-            element='\t'.join(element)
+            element='*'.join(element)
             histo.append(element)
-    histo='\n'.join(histo)
+    histo='#'.join(histo)
     return (entete+histo)
 
 def entete(file="facture.txt"):
@@ -71,7 +71,7 @@ def entete(file="facture.txt"):
     for line in f:
         tab.append(line.split("*"))
     f.close()
-    return ("*".join(tab[0]))
+    return ('*'.join(tab[0]))
 
 def transaction(tab):
     ref=tab[1]

@@ -1,3 +1,11 @@
 Reference Compte*Valeur*Etat*Plafond Debit
 1000*500*Negatif*600
 2000*500*Negatif*700
+
+1000*9500*Positif*600
+
+1000*9500*Positif*600
+
+1000*500*Positif*600
+
+1000*300*Positif*600
