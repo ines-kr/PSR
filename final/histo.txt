@@ -1,0 +1,25 @@
+Reference Compte*Transaction*Valeur*Resultat*Etat
+2000*ajout*700*succes*Positif
+2000*ajout*700*succes*Positif
+2000*ajout*700*succes*Positif
+2000*ajout*700*succes*Positif
+2000*ajout*700*succes*Positif
+2000*retrait*700*echec*Negatif
+2000*retrait*100*succes*Negatif
+2000*depot*20*succes*Negatif
+1000*retrait*179500*echec*Negatif
+1000*retrait*179500*echec*Negatif
+1000*depot*10000*succes*Positif
+1000*depot*10000*succes*Positif
+1000*depot*1000*succes*Positif
+1000*depot*800*succes*Positif
+2000*retrait*70*succes*Negatif
+1000*depot*85*succes*Negatif
+1000*depot*90*succes*Negatif
+1000*retrait*100*succes*Negatif
+2000*retrait*30*succes*Negatif
+1000*depot*500*succes*Positif
+1000*retrait*2000*succes*Negatif
+1000*depot*500*succes*Positif
+1000*retrait*2000*succes*Negatif
+1000*depot*300*succes*Positif
