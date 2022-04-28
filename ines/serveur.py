@@ -1,7 +1,9 @@
 from posixpath import split
 import socket
 import threading
+import time, random
 
+mutex = threading.Lock()
 def Afficher_liste_comptes(file="histo.txt"):
   f = open(file, "rt")
   tab=[]
@@ -215,6 +217,9 @@ class ClientThread(threading.Thread):
         print("Connexion de %s %s" % (self.ip, self.port, ))
         r = self.clientsocket.recv(2048)
         print("client de reference", r, "est connecte")
+        global mutex
+        mutex.acquire()
+        time.sleep(random.randint(1, 2))
         if (r[:4]==b"auth"):
             if(r[4:]==b"banque"):
                 self.clientsocket.send(b"bank authorized")
@@ -225,7 +230,7 @@ class ClientThread(threading.Thread):
                     self.clientsocket.send(b"exist")
                 else:
                     self.clientsocket.send(b"not exist")
-
+        
         elif (r[:5]==b"depot"):
             text=str(r)
             print(r)
@@ -281,8 +286,8 @@ class ClientThread(threading.Thread):
             result=transaction(text)
             print(result)
             self.clientsocket.send(result.encode())
-
-        print("Client déconnecté...")
+        mutex.release()
+        print("Operation terminee...")
 
 tcpsock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 tcpsock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -290,7 +295,7 @@ tcpsock.bind(("",1111))
 
 while True:
     tcpsock.listen(10)
-    print( "En écoute...")
+    print( "En attente...")
     (clientsocket, (ip, port)) = tcpsock.accept()
     newthread = ClientThread(ip, port, clientsocket)
     newthread.start()
