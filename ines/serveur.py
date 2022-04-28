@@ -80,7 +80,7 @@ def transaction(tab):
     type=tab[0]
     val=int(tab[2])
     liste=[]
-    
+
     comptes=open("comptes.txt", 'r+')
     histo=open("histo.txt",'a+')
     facture=open("facture.txt",'a+')
